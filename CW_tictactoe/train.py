@@ -2,8 +2,8 @@ import random
 import players
 import sys
 
-epoch_batch_size = 25000
-epoch_batch_num = 4
+epoch_batch_size = 5000
+epoch_batch_num = 8
 
 assert sys.argv[1] in ['first', 'second']
 first = sys.argv[1] == 'first'
@@ -51,5 +51,5 @@ for i in range(epoch_batch_size * epoch_batch_num):
     if ally.is_win(s):
         win_num += 1
     if (i+1) % epoch_batch_size == 0:
-        print(f"eppch{i+1} win_rate: {round(win_num/epoch_batch_size,3)}")
+        print(f"epoch{i+1} win_rate: {round(win_num/epoch_batch_size,3)}")
         win_num = 0
