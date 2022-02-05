@@ -14,7 +14,7 @@ class AgentUCB():
         self.UCB = np.array([np.inf]*k, dtype=np.float32)
 
     def train(self, bandit: Bandit, step: int):
-        assert(self.k == bandit.k)
+        assert self.k == bandit.k
         rewards = np.zeros(step)
         is_optimal = np.zeros(step)
         optimal_a = np.argmax(bandit.q)
@@ -41,7 +41,7 @@ class AgentStepSzie():
         self.alpha = alpha
 
     def train(self, bandit: BanditNonStationary, step: int):
-        assert(self.k == bandit.k)
+        assert self.k == bandit.k
         rewards = np.zeros(step)
         is_optimal = np.zeros(step)
         for i in range(step):

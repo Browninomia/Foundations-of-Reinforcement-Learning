@@ -13,10 +13,11 @@ def run(pid):
         print(f"epoch {pid}")
     rewards = np.zeros((2, step))
     is_optimal = np.zeros((2, step))
-    bandit = BanditNonStationary()
+    bandit = BanditNonStationary(0.01)
     agent1 = AgentStepSzie(epsilon=0.1)
     agent2 = AgentStepSzie(epsilon=0.1, alpha=0.1)
     rewards[0], is_optimal[0] = agent1.train(bandit, step)
+    bandit.reset()
     rewards[1], is_optimal[1] = agent2.train(bandit, step)
     return (rewards, is_optimal)
 

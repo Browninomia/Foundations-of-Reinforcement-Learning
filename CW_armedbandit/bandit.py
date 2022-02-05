@@ -12,16 +12,18 @@ class Bandit():
 
 
 class BanditNonStationary():
-    _q_start = np.array([0.85591312,  0.23193114, -0.43962759,  0.54379396,  0.33924429,
-                         1.48170205,  0.83391867, -0.81463182, -0.43322642,  0.8958632])
-
-    def __init__(self, k: int = 10) -> None:
+    def __init__(self, nonstation_std: float, init_value: float = 0., k: int = 10) -> None:
         self.k = k
-        self.q = self._q_start
+        self.init_value = init_value
+        self.nonstation_std = nonstation_std
+        self.q = np.array([init_value for _ in range(self.k)])
 
     def reward(self, action: int) -> float:
-        self.q += np.random.normal(0, 0.01, self.k)
+        self.q += np.random.normal(0, self.nonstation_std, self.k)
         return random.normalvariate(self.q[action], 1)
 
     def get_optimal_action(self) -> int:
         return np.argmax(self.q)
+
+    def reset(self) -> None:
+        self.q = np.array([self.init_value for _ in range(self.k)])

@@ -1,4 +1,7 @@
 *.sh
 *__pycache__*
 *.pdf
+!IMG/*
 .ipynb_checkpoints/
+*.ipynb
+*.png
