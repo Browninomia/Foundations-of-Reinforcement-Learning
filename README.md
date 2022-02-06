@@ -82,10 +82,4 @@ epoch35000 win_rate: 0.454
 epoch40000 win_rate: 0.449
 ```
 ### 10-armed bandit
-#### Ex1: Stationary Bandit, $\epsilon$-greedy Agent with UCB
-![ex1-action](https://github.com/Browninomia/Foundations-of-Reinforcement-Learning/blob/master/IMG/ex1-action.pdf)
-
-![ex1-reward](https://github.com/Browninomia/Foundations-of-Reinforcement-Learning/blob/master/IMG/ex1-reward.pdf)
-#### EX2: Non-stationary Bandit, $\epsilon$-greedy Agent with step-size
-![ex2-action](https://github.com/Browninomia/Foundations-of-Reinforcement-Learning/blob/master/IMG/ex2-action.pdf)
-![ex2-reward](https://github.com/Browninomia/Foundations-of-Reinforcement-Learning/blob/master/IMG/ex2-reward.pdf)
+The plots are in ./IMG directory

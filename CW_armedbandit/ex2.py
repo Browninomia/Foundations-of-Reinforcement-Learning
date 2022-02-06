@@ -7,15 +7,18 @@ import matplotlib.pyplot as plt
 run_num = 2000
 step = 10000
 
+SCALE = 0.01
+ALPHA = 0.1
+
 
 def run(pid):
     if pid % 200 == 0:
         print(f"epoch {pid}")
     rewards = np.zeros((2, step))
     is_optimal = np.zeros((2, step))
-    bandit = BanditNonStationary(0.01)
+    bandit = BanditNonStationary(nonstation_std=SCALE)
     agent1 = AgentStepSzie(epsilon=0.1)
-    agent2 = AgentStepSzie(epsilon=0.1, alpha=0.1)
+    agent2 = AgentStepSzie(epsilon=0.1, alpha=ALPHA)
     rewards[0], is_optimal[0] = agent1.train(bandit, step)
     bandit.reset()
     rewards[1], is_optimal[1] = agent2.train(bandit, step)
@@ -28,16 +31,16 @@ if __name__ == '__main__':
     x = np.arange(step)
     rewards = np.mean((np.array(ans)[:, 0]), axis=0)
     is_optimal = np.mean((np.array(ans)[:, 1]), axis=0)
-    fig, ax = plt.subplots()
+
+    ax = plt.subplot(211)
     ax.plot(x, rewards[0], label='sample average', color='gray')
     ax.plot(x, rewards[1], label='constant step size', color='b')
-    ax.set(ylabel='Average reward', xlabel='Steps')
-    plt.legend()
-    plt.savefig('ex2-reward.pdf', format='pdf')
+    ax.set(ylabel='Average reward', title=rf'$\sigma$={SCALE}, $\alpha$={ALPHA}')
+    ax.legend()
 
-    fig, ax = plt.subplots()
+    ax = plt.subplot(212)
     ax.plot(x, is_optimal[0], label='sample average', color='gray')
     ax.plot(x, is_optimal[1], label='constant step size', color='b')
     ax.set(ylabel='Optimal action %', xlabel='Steps')
-    plt.legend()
-    plt.savefig('ex2-action.pdf')
+    ax.legend()
+    plt.savefig('ex2.pdf')
