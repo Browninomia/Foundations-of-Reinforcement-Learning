@@ -9,9 +9,9 @@ class AgentUCB():
         self.epsilon = epsilon
         self.c = c
         self.k = k
-        self.Q = np.array([init_value]*k, dtype=np.float32)
+        self.Q = np.array([init_value]*k, dtype=np.float64)
         self.N = np.zeros(k, dtype=int)
-        self.UCB = np.array([np.inf]*k, dtype=np.float32)
+        self.UCB = np.array([np.inf]*k, dtype=np.float64)
 
     def train(self, bandit: Bandit, step: int):
         assert self.k == bandit.k
@@ -36,7 +36,7 @@ class AgentStepSzie():
     def __init__(self, epsilon: float, k: int = 10, alpha: float = None) -> None:
         self.epsilon = epsilon
         self.k = k
-        self.Q = np.zeros(k, dtype=int)
+        self.Q = np.zeros(k, dtype=np.float64)
         self.N = np.zeros(k, dtype=int)
         self.alpha = alpha
 
