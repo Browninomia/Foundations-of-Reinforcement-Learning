@@ -2,8 +2,8 @@ import random
 import players
 import sys
 
-epoch_batch_size = 5000
-epoch_batch_num = 8
+epoch_batch_size = 10000
+epoch_batch_num = 5
 
 assert sys.argv[1] in ['first', 'second']
 first = sys.argv[1] == 'first'
@@ -20,6 +20,7 @@ else:
 
 ally = players.RLPlayer('X', 0.1, 0.01)
 win_num = 0
+oppo_win_num = 0
 if first:
     print(f"==========\nRLPlayer vs {type(oppo).__name__}")
 else:
@@ -50,6 +51,10 @@ for i in range(epoch_batch_size * epoch_batch_num):
                 ally.update_V(s, s_old)
     if ally.is_win(s):
         win_num += 1
+    if oppo.is_win(s):
+        oppo_win_num += 1
     if (i+1) % epoch_batch_size == 0:
-        print(f"epoch{i+1} win_rate: {round(win_num/epoch_batch_size,3)}")
+        print("epoch%d, win_rate: %.3f, oppo_win_rate: %.3f"
+              % (i+1, win_num/epoch_batch_size, oppo_win_num/epoch_batch_size))
         win_num = 0
+        oppo_win_num = 0

@@ -22,64 +22,46 @@ python ex2.py
 ```
 ==========
 RLPlayer vs Type1Player
-epoch5000 win_rate: 0.975
-epoch10000 win_rate: 0.979
-epoch15000 win_rate: 0.976
-epoch20000 win_rate: 0.977
-epoch25000 win_rate: 0.976
-epoch30000 win_rate: 0.982
-epoch35000 win_rate: 0.985
-epoch40000 win_rate: 0.988
+epoch10000, win_rate: 0.978, oppo_win_rate: 0.015
+epoch20000, win_rate: 0.981, oppo_win_rate: 0.011
+epoch30000, win_rate: 0.981, oppo_win_rate: 0.012
+epoch40000, win_rate: 0.981, oppo_win_rate: 0.011
+epoch50000, win_rate: 0.986, oppo_win_rate: 0.006
 ==========
 RLPlayer vs Type2Player
-epoch5000 win_rate: 0.964
-epoch10000 win_rate: 0.966
-epoch15000 win_rate: 0.975
-epoch20000 win_rate: 0.977
-epoch25000 win_rate: 0.981
-epoch30000 win_rate: 0.987
-epoch35000 win_rate: 0.982
-epoch40000 win_rate: 0.982
+epoch10000, win_rate: 0.967, oppo_win_rate: 0.023
+epoch20000, win_rate: 0.970, oppo_win_rate: 0.013
+epoch30000, win_rate: 0.974, oppo_win_rate: 0.011
+epoch40000, win_rate: 0.984, oppo_win_rate: 0.009
+epoch50000, win_rate: 0.991, oppo_win_rate: 0.007
 ==========
 RLPlayer vs Type3Player
-epoch5000 win_rate: 0.884
-epoch10000 win_rate: 0.902
-epoch15000 win_rate: 0.916
-epoch20000 win_rate: 0.914
-epoch25000 win_rate: 0.9
-epoch30000 win_rate: 0.884
-epoch35000 win_rate: 0.91
-epoch40000 win_rate: 0.911
+epoch10000, win_rate: 0.894, oppo_win_rate: 0.074
+epoch20000, win_rate: 0.909, oppo_win_rate: 0.067
+epoch30000, win_rate: 0.913, oppo_win_rate: 0.064
+epoch40000, win_rate: 0.904, oppo_win_rate: 0.066
+epoch50000, win_rate: 0.915, oppo_win_rate: 0.058
 ==========
  Type1Player vs RLPlayer
-epoch5000 win_rate: 0.823
-epoch10000 win_rate: 0.876
-epoch15000 win_rate: 0.88
-epoch20000 win_rate: 0.898
-epoch25000 win_rate: 0.903
-epoch30000 win_rate: 0.913
-epoch35000 win_rate: 0.905
-epoch40000 win_rate: 0.898
+epoch10000, win_rate: 0.820, oppo_win_rate: 0.145
+epoch20000, win_rate: 0.879, oppo_win_rate: 0.106
+epoch30000, win_rate: 0.912, oppo_win_rate: 0.067
+epoch40000, win_rate: 0.935, oppo_win_rate: 0.046
+epoch50000, win_rate: 0.932, oppo_win_rate: 0.046
 ==========
  Type2Player vs RLPlayer
-epoch5000 win_rate: 0.778
-epoch10000 win_rate: 0.842
-epoch15000 win_rate: 0.855
-epoch20000 win_rate: 0.857
-epoch25000 win_rate: 0.856
-epoch30000 win_rate: 0.904
-epoch35000 win_rate: 0.897
-epoch40000 win_rate: 0.908
+epoch10000, win_rate: 0.791, oppo_win_rate: 0.157
+epoch20000, win_rate: 0.832, oppo_win_rate: 0.133
+epoch30000, win_rate: 0.847, oppo_win_rate: 0.119
+epoch40000, win_rate: 0.903, oppo_win_rate: 0.070
+epoch50000, win_rate: 0.907, oppo_win_rate: 0.065
 ==========
  Type3Player vs RLPlayer
-epoch5000 win_rate: 0.402
-epoch10000 win_rate: 0.401
-epoch15000 win_rate: 0.433
-epoch20000 win_rate: 0.419
-epoch25000 win_rate: 0.427
-epoch30000 win_rate: 0.471
-epoch35000 win_rate: 0.454
-epoch40000 win_rate: 0.449
+epoch10000, win_rate: 0.397, oppo_win_rate: 0.525
+epoch20000, win_rate: 0.412, oppo_win_rate: 0.497
+epoch30000, win_rate: 0.444, oppo_win_rate: 0.453
+epoch40000, win_rate: 0.429, oppo_win_rate: 0.482
+epoch50000, win_rate: 0.448, oppo_win_rate: 0.456
 ```
 ### 10-armed bandit
 The plots are in ./IMG directory
