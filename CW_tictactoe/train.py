@@ -2,8 +2,8 @@ import random
 import players
 import sys
 
-epoch_batch_size = 10000
-epoch_batch_num = 5
+epoch_batch_size = 5000
+epoch_batch_num = 10
 
 assert sys.argv[1] in ['first', 'second']
 first = sys.argv[1] == 'first'
